@@ -49,9 +49,8 @@ function cargarMunicipios2() {
         municipioSelect.appendChild(option);
     });
 }
-
-
-document.addEventListener("DOMContentLoaded", function () {
+ // Esta función se encarga de verificar si los correos electrónicos coinciden
+ document.addEventListener("DOMContentLoaded", function () {
     const botonEnviar = document.querySelector(".boton-enviar");
     const modalConfirmacion = new bootstrap.Modal(document.getElementById("confirmacionModal"));
     const miFormulario = document.getElementById("miFormulario");
@@ -88,9 +87,19 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("correo2").setCustomValidity(""); // Uno de los campos está vacío, no hay mensaje de error
         }
 
-// Agregar el evento input a los campos de correo electrónico
-document.getElementById("correo1").addEventListener("input", verificarCorreos);
-document.getElementById("correo2").addEventListener("input", verificarCorreos);
+        // Actualiza la validación del formulario
+        miFormulario.reportValidity();
+    }
+
+    document.getElementById("correo1").addEventListener("input", verificarCorreos);
+    document.getElementById("correo2").addEventListener("input", verificarCorreos);
+})
+
+
+
+
+
+
 
 function validarInput() {
     const input = document.getElementById('letrasInput');
@@ -132,10 +141,3 @@ function cerrarAlerta() {
     const customAlert = document.getElementById('customAlert');
     customAlert.style.display = 'none';
 }
-        // Actualiza la validación del formulario
-        miFormulario.reportValidity();
-    }
-
-    document.getElementById("correo1").addEventListener("input", verificarCorreos);
-    document.getElementById("correo2").addEventListener("input", verificarCorreos);
-});

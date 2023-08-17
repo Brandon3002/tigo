@@ -15,11 +15,11 @@
 	<body>
 		<img src="img/logo.png" class="logo">
 		<center>
-			<h1 class="titulo">Tigo esta conTigo</h1>
+			<h1 class="titulo">daniel bobo</h1>
 		</center>
 
 		<div class="container">
-			<form action="" id="miFormulario" method="post""><br><br>
+			<form action="" id="miFormulario"><br><br>
 				<div class="arriba">
 					<div class="encabezado-content">
 						<label class="titulo">FORMULARIO</label>
@@ -49,28 +49,28 @@
 						<input type="text" class="form-control" id="letrasInput" oninput="validarInput()" maxlength="50" required>
 					</div>
 
-					<h5>DEPARTAMENTO DONDE SE REALIZA LA CONSULTA<span style="color: red;">(*)</span></h5>
+					<h5>DEPARTAMENTO<span style="color: red;">(*)</span></h5>
 					<select id="departamento" onchange="cargarMunicipios()" id="campo5" required>
-						<option value=""></option>
-						<option value="antioquia">Antioquia</option>
-						<option value="atlantico">Atlántico</option>
-						<option value="bogota">Bogotá D.C.</option>
-						<option value="valle">Valle del Cauca</option>
-						<option value="santander">Santander</option>
-						<option value="caldas">Caldas</option>
-						<option value="risaralda">Risaralda</option>
-						<option value="quindio">Quindío</option>
-						<option value="bolivar">Bolívar</option>
-						<option value="magdalena">Magdalena</option>
-						<option value="tolima">Tolima</option>
-						<option value="norteSantander">Norte de Santander</option>
-         			 <!-- Agrega más opciones de departamentos -->
-        			</select>
+		  <option value=""></option>				
+          <option value="antioquia">Antioquia</option>
+          <option value="atlantico">Atlántico</option>
+          <option value="bogota">Bogotá D.C.</option>
+          <option value="valle">Valle del Cauca</option>
+          <option value="santander">Santander</option>
+          <option value="caldas">Caldas</option>
+          <option value="risaralda">Risaralda</option>
+          <option value="quindio">Quindío</option>
+          <option value="bolivar">Bolívar</option>
+          <option value="magdalena">Magdalena</option>
+          <option value="tolima">Tolima</option>
+          <option value="norteSantander">Norte de Santander</option>
+          <!-- Agrega más opciones de departamentos -->
+        </select>
 					<br>
-					<h5>MUNICIPIO DONDE SE REALIZA LA CONSULTA<span style="color: red;">(*)</span></h5>
+					<h5>MUNICIPIO<span style="color: red;">(*)</span></h5>
 					<select id="municipio" required>
-         			 <!-- Las opciones de municipios se cargarán dinámicamente -->
-        			</select>
+          <!-- Las opciones de municipios se cargarán dinámicamente -->
+        </select>
 				</div>
 				<br>
 
@@ -108,7 +108,7 @@
 					<h5>NUMERO DE TELEFONO<span style="color: red;">(*)</span></h5>
 					<input type="text" id="numero" oninput="validarNumero(this)" class="form-control" id="campo11" maxlength="12" required>
 
-					<h5>DEPARTAMENTO DE RESIDENCIA<span style="color: red;">(*)</span></h5>
+					<h5>DEPARTAMENTO<span style="color: red;">(*)</span></h5>
 					<select id="departamento2" onchange="cargarMunicipios2()" id="campo12" required>
 						<option value=""></option>
 						<option value="antioquia">Antioquia</option>
@@ -126,7 +126,7 @@
           <!-- Agrega más opciones de departamentos -->
         </select>
 					<br>
-					<h5>MUNICIPIO DE RESIDENCIA<span style="color: red;" required>(*) </span></h5>
+					<h5>MUNICIPIO<span style="color: red;" required>(*) </span></h5>
 					<select id="municipio2" id="campo13">
           <!-- Las opciones de municipios se cargarán dinámicamente -->
         </select>
@@ -140,15 +140,14 @@
 					<div class="input-group mb-3">
 						<input type="email" class="form-control" id="correo2" name="correo2" aria-describedby="button-addon2" maxlength="20" required>
 					</div>
-
-
-					
 			</div>
 
 			</form>
 		</div>
-
-		
+		<div class="custom-alert" id="customAlert">
+			<p class="custom-alert-content">Lo lamento pero necesitamos asegurarnos que aceptes la consulta de centrales de riesgo.</p>
+			<button class="custom-alert-button" onclick="cerrarAlerta()">OK</button>
+		</div>
     <script src="funciones.js"></script>
 
 	<div class="modal fade" id="confirmacionModal" tabindex="-1" aria-labelledby="confirmacionModalLabel" aria-hidden="true">
@@ -167,11 +166,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-	
-
-
-	
+	</div>	
 	</body>
 </html>
