@@ -15,11 +15,11 @@
 	<body>
 		<img src="img/logo.png" class="logo">
 		<center>
-			<h1 class="titulo">daniel bobo</h1>
+			<h1 class="titulo">Tigo esta conTigo</h1>
 		</center>
 
 		<div class="container">
-			<form action="" id="miFormulario"><br><br>
+			<form action="" id="miFormulario" method="post""><br><br>
 				<div class="arriba">
 					<div class="encabezado-content">
 						<label class="titulo">FORMULARIO</label>
@@ -49,8 +49,9 @@
 						<input type="text" class="form-control" id="campo4" maxlength="50" required>
 					</div>
 
-					<h5>DEPARTAMENTO<span style="color: red;">(*)</span></h5>
+					<h5>DEPARTAMENTO DONDE SE REALIZA LA CONSULTA<span style="color: red;">(*)</span></h5>
 					<select id="departamento" onchange="cargarMunicipios()" id="campo5" required>
+						<option value=""></option>
 						<option value="antioquia">Antioquia</option>
 						<option value="atlantico">Atlántico</option>
 						<option value="bogota">Bogotá D.C.</option>
@@ -66,7 +67,7 @@
          			 <!-- Agrega más opciones de departamentos -->
         			</select>
 					<br>
-					<h5>MUNICIPIO<span style="color: red;">(*)</span></h5>
+					<h5>MUNICIPIO DONDE SE REALIZA LA CONSULTA<span style="color: red;">(*)</span></h5>
 					<select id="municipio" required>
          			 <!-- Las opciones de municipios se cargarán dinámicamente -->
         			</select>
@@ -107,8 +108,9 @@
 					<h5>NUMERO DE TELEFONO<span style="color: red;">(*)</span></h5>
 					<input type="text" id="numero" oninput="validarNumero(this)" class="form-control" id="campo11" maxlength="12" required>
 
-					<h5>DEPARTAMENTO<span style="color: red;">(*)</span></h5>
+					<h5>DEPARTAMENTO DE RESIDENCIA<span style="color: red;">(*)</span></h5>
 					<select id="departamento2" onchange="cargarMunicipios2()" id="campo12" required>
+						<option value=""></option>
 						<option value="antioquia">Antioquia</option>
 						<option value="atlantico">Atlántico</option>
 						<option value="bogota">Bogotá D.C.</option>
@@ -124,7 +126,7 @@
           <!-- Agrega más opciones de departamentos -->
         </select>
 					<br>
-					<h5>MUNICIPIO<span style="color: red;" required>(*) </span></h5>
+					<h5>MUNICIPIO DE RESIDENCIA<span style="color: red;" required>(*) </span></h5>
 					<select id="municipio2" id="campo13">
           <!-- Las opciones de municipios se cargarán dinámicamente -->
         </select>
@@ -138,11 +140,38 @@
 					<div class="input-group mb-3">
 						<input type="email" class="form-control" id="correo2" name="correo2" aria-describedby="button-addon2" maxlength="20" required>
 					</div>
+
+
+					
 			</div>
 
 			</form>
 		</div>
-    <script src="funciones.js"></script>
-	</body>
 
+		
+    <script src="funciones.js"></script>
+
+	<div class="modal fade" id="confirmacionModal" tabindex="-1" aria-labelledby="confirmacionModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="confirmacionModalLabel">Confirmar envío</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+				</div>
+				<div class="modal-body">
+					¿Estás seguro de que deseas enviar el formulario?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary" id="confirmarEnvio">Confirmar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+	</body>
 </html>
