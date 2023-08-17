@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const confirmarEnvio = document.getElementById("confirmarEnvio");
     confirmarEnvio.addEventListener("click", function () {
         modalConfirmacion.hide(); // Cierra el modal de confirmación
-        miFormulario.submit(); // Envía el formulario
+        miFormulario.submit(); // Envía el formulariogit 
     });
 
     function verificarCorreos() {
