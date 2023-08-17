@@ -91,11 +91,6 @@ function validarInput2() {
 }
 
 
-function validarFormulario() {
-    validarInput();
-    validarInput2();
-}
-
 function mostrarAlerta() {
     const campo6 = document.getElementById('campo6');
     const seleccion = campo6.value;
