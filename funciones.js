@@ -74,14 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
         miFormulario.submit(); // Envía el formulario
     });
 
-    document.getElementById("correo1").addEventListener("input", function() {
-        verificarCorreos(document.getElementById("correo1").value, document.getElementById("correo2").value);
-    });
-    document.getElementById("correo2").addEventListener("input", function() {
-        verificarCorreos(document.getElementById("correo1").value, document.getElementById("correo2").value);
-    });
+    function verificarCorreos() {
+        const correo1 = document.getElementById("correo1").value;
+        const correo2 = document.getElementById("correo2").value;
 
-    function verificarCorreos(correo1, correo2) {
         if (correo1 !== "" && correo2 !== "") {
             if (correo1 === correo2) {
                 document.getElementById("correo2").setCustomValidity(""); // Correos coinciden, elimina el mensaje de error
@@ -91,5 +87,11 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             document.getElementById("correo2").setCustomValidity(""); // Uno de los campos está vacío, no hay mensaje de error
         }
+
+        // Actualiza la validación del formulario
+        miFormulario.reportValidity();
     }
+
+    document.getElementById("correo1").addEventListener("input", verificarCorreos);
+    document.getElementById("correo2").addEventListener("input", verificarCorreos);
 });
