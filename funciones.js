@@ -65,3 +65,48 @@ function verificarCorreos() {
 document.getElementById("correo1").addEventListener("input", verificarCorreos);
 document.getElementById("correo2").addEventListener("input", verificarCorreos);
 
+function validarInput() {
+    const input = document.getElementById('letrasInput');
+    const inputValue = input.value;
+
+    // Expresión regular para comprobar si solo contiene letras
+    const letrasRegExp = /^[a-zA-Z]+$/;
+
+    if (!letrasRegExp.test(inputValue)) {
+        input.value = inputValue.replace(/[^a-zA-Z]/g, ''); // Remover caracteres no válidos
+    }
+}
+
+
+function validarInput2() {
+    const input = document.getElementById('letrasInput2');
+    const inputValue = input.value;
+
+    // Expresión regular para comprobar si solo contiene letras
+    const letrasRegExp = /^[a-zA-Z]+$/;
+
+    if (!letrasRegExp.test(inputValue)) {
+        input.value = inputValue.replace(/[^a-zA-Z]/g, ''); // Remover caracteres no válidos
+    }
+}
+
+
+function validarFormulario() {
+    validarInput();
+    validarInput2();
+}
+
+function mostrarAlerta() {
+    const campo6 = document.getElementById('campo6');
+    const seleccion = campo6.value;
+
+    if (seleccion === "NO") {
+        const customAlert = document.getElementById('customAlert');
+        customAlert.style.display = 'block';
+    }
+}
+
+function cerrarAlerta() {
+    const customAlert = document.getElementById('customAlert');
+    customAlert.style.display = 'none';
+}

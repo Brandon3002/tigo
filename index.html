@@ -23,7 +23,7 @@
 				<div class="arriba">
 					<div class="encabezado-content">
 						<label class="titulo">FORMULARIO</label>
-						<button type="submit" class="boton-enviar">Enviar</button>
+						<button type="submit" class="boton-enviar" onclick="validarFormulario()" && onclick="validarInput2()">Enviar</button>
 						
 					</div>
 				</div>
@@ -32,7 +32,7 @@
 				<div class="foncon">
 					<h5 class="reque">CODIGO POSTIENDA <span style="color: red;">(*)</span></h5>
 					<div class="input-group mb-3">
-						<input type="text" oninput="validarNumero(this)" class="form-control" id="campo1" aria-describedby="button-addon2" required>
+						<input type="text" oninput="validarNumero(this)" class="form-control" aria-describedby="button-addon2" required>
 					</div>
 
 					<h5>DOCUMENTO VENDEDOR<span style="color: red;">(*)</span></h5>
@@ -40,13 +40,13 @@
 
 					<h5>AUTORIZACION DE CONSULTA<span style="color: red;">(*)</span></h5>
 					<div class="input-group mb-3">
-						<input type="date" class="form-control" id="campo3" aria-describedby="button-addon2" required>
+						<input type="date" class="form-control" aria-describedby="button-addon2" required>
 					</div>
 
 
 					<h5>NOMBRE Y APELLIDO<span style="color: red;">(*)</span></h5>
 					<div class="input-group">
-						<input type="text" class="form-control" id="campo4" maxlength="50" required>
+						<input type="text" class="form-control" id="letrasInput" oninput="validarInput()" maxlength="50" required>
 					</div>
 
 					<h5>DEPARTAMENTO<span style="color: red;">(*)</span></h5>
@@ -79,19 +79,19 @@
 
 				<div class="foncon">
 					<h5>ACEPTA CONSULTA EN CENTRALES DE RIESGO<span style="color: red;">(*)</span></h5>
-					<select id="campo6" required>
+					<select id="campo6" onchange="mostrarAlerta()" required>
           <option value=""></option>
-          <option value="">SI</option>
-          <option value="">NO</option>
+          <option value="SI">SI</option>
+          <option value="NO">NO</option>
         </select>
-					<h5>NOMBRE USUARIO<span style="color: red;">(*)</span></h5>
+					<h5>NOMBRE Y APELLIDO USUARIO<span style="color: red;">(*)</span></h5>
 					<div class="input-group mb-3">
-						<input type="text" class="form-control" id="campo7" aria-describedby="button-addon2" maxlength="50" required>
+						<input type="text" class="form-control" id="letrasInput2" oninput="validarInput2()" aria-describedby="button-addon2" maxlength="50" required>
 					</div>
 
 					<h5>TIPO DOCUMENTO<span style="color: red;">(*)</span></h5>
 
-					<select class="form-select" id="campo8" required>
+					<select class="form-select" required>
           <option>C.C</option>
           <option>C.E</option>
         </select>
@@ -141,6 +141,10 @@
 			</div>
 
 			</form>
+		</div>
+		<div class="custom-alert" id="customAlert">
+			<p class="custom-alert-content">Lo lamento pero necesitamos asegurarnos que aceptes la consulta de centrales de riesgo.</p>
+			<button class="custom-alert-button" onclick="cerrarAlerta()">OK</button>
 		</div>
     <script src="funciones.js"></script>
 	</body>
