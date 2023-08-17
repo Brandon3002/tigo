@@ -65,3 +65,12 @@ function verificarCorreos() {
 document.getElementById("correo1").addEventListener("input", verificarCorreos);
 document.getElementById("correo2").addEventListener("input", verificarCorreos);
 
+document.getElementById("miFormulario").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+    
+    // Aquí puedes agregar código para mostrar una alerta de éxito
+    alert("El formulario se envió correctamente.");
+    
+    // Limpia el formulario si es necesario
+    this.reset();
+});
