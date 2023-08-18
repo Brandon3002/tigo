@@ -13,13 +13,9 @@
 	</head>
 
 	<body>
-		<img src="img/logo.png" class="logo">
-		<center>
-			<h1 class="titulo">daniel bobo</h1>
-		</center>
-
+		<br><br>
 		<div class="container">
-			<form action="" id="miFormulario"><br><br>
+			<form action="" id="miFormulario" method="post"><br><br>
 				<div class="arriba">
 					<div class="encabezado-content">
 						<label class="titulo">FORMULARIO</label>
@@ -142,12 +138,251 @@
 					</div>
 			</div>
 
+			<h5>antes de terminar, necesitamos hacer el diligenciamiento de documentos</h5>
+			<style>
+				/* Estilos específicos para el juego */
+				.game-container {
+				  text-align: center;
+				}
+				.image {
+				  width: 400px;
+				  height: 200px;
+				  margin: 10px auto;
+				  border: 2px solid #ccc;
+				  cursor: pointer;
+				  overflow: hidden;
+				}
+				.image img {
+				  width: 100%;
+				  height: 100%;
+				  object-fit: cover;
+				}
+				.image:hover {
+				  border-color: #333;
+				}
+				
+				/* Estilos para la alerta */
+				.custom-alert {
+				  display: none;
+				  position: fixed;
+				  top: 50%;
+				  left: 50%;
+				  transform: translate(-50%, -50%);
+				  background-color: #fff;
+				  border-radius: 8px;
+				  padding: 20px;
+				  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				  z-index: 9999;
+				}
+				.custom-alert h2 {
+				  margin: 0 0 10px;
+				  font-size: 24px;
+				  color: #333;
+				}
+				.custom-alert button {
+				  padding: 8px 12px;
+				  border: none;
+				  background-color: #007bff;
+				  color: #fff;
+				  border-radius: 4px;
+				  cursor: pointer;
+				  font-size: 16px;
+				}
+			  </style>
+			  </head>
+			  <body>
+			  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameModal">
+				DOCUMENTOS
+			  </button>
+			  
+			  <!-- Modal -->
+			  <div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="gameModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title" id="gameModalLabel">BUENA SUERTE, ESTAMOS CONTIGO</h5>
+					  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+					</div>
+					<div class="modal-body">
+					  <h5>Elige la cédula, confiamos en ti</h5>
+					  <div class="game-container">
+						<div class="image" onclick="checkAnswer(1)">
+						  <img src="img/extranjero.png" alt="Imagen 1">
+						</div>
+						<div class="image" onclick="checkAnswer(2)">
+						  <img src="img/cedula.png" alt="Imagen 2">
+						</div>
+						<div class="image" onclick="checkAnswer(3)">
+						  <img src="img/tarjeta_identidad.jpg" alt="Imagen 3">
+						</div>
+						<div class="image" onclick="checkAnswer(4)">
+							<img src="img/conduccion.png" alt="Imagen 4">
+						  </div>
+					  </div>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			  
+			  <div class="custom-alert" id="customAlert">
+				<h2></h2>
+				<button onclick="closeAlert()">Cerrar</button>
+			  </div>
+			  
+			  <script>
+				function checkAnswer(selectedImage) {
+				  var alertBox = document.getElementById("customAlert");
+				  if (selectedImage === 1) { // Cambia esto a la opción correcta
+					showAlert("¡Correcto! Has elegido la imagen correcta. La cedula de extranjeria sirve para hacer el diligenciamiento :D", alertBox);
+				  }else if (selectedImage === 2){
+					showAlert("¡Correcto! Has elegido la imagen correcta. Nuestra cedula sirve para hacer el diligenciamiento :D", alertBox);
+				}else if (selectedImage === 3){
+					showAlert("¡Incorrecto! Has elegido la imagen incorrecta.Recuerda que las unicas validas serian, cedula de extranjeria y cedula. La tarjeta de identidad es invalida para hacer el procedimiento. Intentalo de nuevo", alertBox);
+				}else if (selectedImage === 4){
+					showAlert("Incorrecto. Recuerda que las unicas validas serian, cedula de extranjeria y cedula, la licencia de conduccion es invalida para hacer el procedimiento. Intentalo de nuevo", alertBox);
+				}
+			}
+			  
+				function showAlert(message, alertBox) {
+				  alertBox.querySelector("h2").textContent = message;
+				  alertBox.style.display = "block";
+				}
+			  
+				function closeAlert() {
+				  var alertBox = document.getElementById("customAlert");
+				  alertBox.style.display = "none";
+				}
+			  </script>
+
+
+			  <h5>necesitamos tambien el diligenciamiento de firmas</h5>
+
+
+			  <style>
+				/* Estilos específicos para el juego */
+				.game-container {
+				  text-align: center;
+				}
+				.image {
+				  width: 400px;
+				  height: 200px;
+				  margin: 10px auto;
+				  border: 2px solid #ccc;
+				  cursor: pointer;
+				  overflow: hidden;
+				}
+				.image img {
+				  width: 100%;
+				  height: 100%;
+				  object-fit: cover;
+				}
+				.image:hover {
+				  border-color: #333;
+				}
+				
+				/* Estilos para la alerta */
+				.custom-alert {
+				  display: none;
+				  position: fixed;
+				  top: 50%;
+				  left: 50%;
+				  transform: translate(-50%, -50%);
+				  background-color: #fff;
+				  border-radius: 8px;
+				  padding: 20px;
+				  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				  z-index: 9999;
+				}
+				.custom-alert h2 {
+				  margin: 0 0 10px;
+				  font-size: 24px;
+				  color: #333;
+				}
+				.custom-alert button {
+				  padding: 8px 12px;
+				  border: none;
+				  background-color: #007bff;
+				  color: #fff;
+				  border-radius: 4px;
+				  cursor: pointer;
+				  font-size: 16px;
+				}
+			  </style>
+			  </head>
+			  <body>
+			  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameModal2">
+				FIRMAS
+			  </button>
+			  
+			  <!-- Modal -->
+			  <div class="modal fade" id="gameModal2" tabindex="-1" aria-labelledby="gameModalLabel2" aria-hidden="true">
+				<div class="modal-dialog">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title" id="gameModalLabel2">BUENA SUERTE, ESTAMOS CONTIGO</h5>
+					  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+					</div>
+					<div class="modal-body">
+					  <h5>Elige la frima correcta, confiamos en ti</h5>
+					  <div class="game-container">
+						<div class="image" onclick="checkAnswer2(11)">
+						  <img src="img/images.jpg" alt="Imagen 1">
+						</div>
+						<div class="image" onclick="checkAnswer2(22)">
+						  <img src="img/firma-izquierda.jpg" alt="Imagen 2">
+						</div>
+					  </div>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			  
+			  <div class="custom-alert" id="customAlert">
+				<h2></h2>
+				<button onclick="closeAlert()">Cerrar</button>
+			  </div>
+			  
+			  <script>
+				function checkAnswer2(selectedImage2) {
+				  var alertBox = document.getElementById("customAlert");
+				  if (selectedImage2 === 22) {
+					showAlert("¡Correcto! Has elegido la imagen correcta. impresionante!", alertBox);
+				}else if (selectedImage2 === 11){
+					showAlert("Incorrecto. Esa firma es un poco extraña. intentalo de nuevo", alertBox);
+				}
+				}
+			  
+				function showAlert(message, alertBox) {
+				  alertBox.querySelector("h2").textContent = message;
+				  alertBox.style.display = "block";
+				}
+			  
+				function closeAlert() {
+				  var alertBox = document.getElementById("customAlert");
+				  alertBox.style.display = "none";
+				}
+			  </script>
+			  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+			  
 			</form>
 		</div>
-		<div class="custom-alert" id="customAlert">
+		<div class="custom-alert" id="campo6">
 			<p class="custom-alert-content">Lo lamento pero necesitamos asegurarnos que aceptes la consulta de centrales de riesgo.</p>
 			<button class="custom-alert-button" onclick="cerrarAlerta()">OK</button>
 		</div>
+		
     <script src="funciones.js"></script>
 
 	<div class="modal fade" id="confirmacionModal" tabindex="-1" aria-labelledby="confirmacionModalLabel" aria-hidden="true">
@@ -158,12 +393,12 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
 				</div>
 				<div class="modal-body">
-					¿Estás seguro de que deseas enviar el formulario?
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
 					<button type="button" class="btn btn-primary" id="confirmarEnvio">Confirmar</button>
 				</div>
+				
 			</div>
 		</div>
 	</div>	

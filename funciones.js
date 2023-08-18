@@ -70,7 +70,7 @@ function cargarMunicipios2() {
     const confirmarEnvio = document.getElementById("confirmarEnvio");
     confirmarEnvio.addEventListener("click", function () {
         modalConfirmacion.hide(); // Cierra el modal de confirmación
-        miFormulario.submit(); // Envía el formulariogit 
+        miFormulario.submit(); // Envía el formulari 
     });
 
     function verificarCorreos() {
@@ -141,3 +141,35 @@ function cerrarAlerta() {
     const customAlert = document.getElementById('customAlert');
     customAlert.style.display = 'none';
 }
+
+// En el área donde ya tienes las demás funciones
+function mostrarAlertaFormulario() {
+    const formularioAlert = document.getElementById('formularioAlert');
+    formularioAlert.style.display = 'block';
+}
+
+function cerrarAlertaFormulario() {
+    const formularioAlert = document.getElementById('formularioAlert');
+    formularioAlert.style.display = 'none';
+}
+
+//------------------------------------------
+function checkAnswer(selectedImage) {
+    if (selectedImage === 2) { // Cambia esto a la opción correcta
+      showCustomAlert("¡Correcto! Has elegido la imagen correcta.");
+    } else {
+      showCustomAlert("Incorrecto. Inténtalo de nuevo.");
+    }
+  }
+
+  function showCustomAlert(message) {
+    var alertBox = document.getElementById("customAlert");
+    alertBox.querySelector("h2").textContent = message;
+    alertBox.style.display = "block";
+  }
+
+  function closeAlert() {
+    var alertBox = document.getElementById("customAlert");
+    alertBox.style.display = "none";
+  }
+

@@ -1,5 +1,6 @@
 body{
-    background-color: #002e6d;
+    background-image: url(img/azul.png);
+    overflow: hidden; /* Deshabilita el desplazamiento vertical */
 }
 .titulo{
     margin-left: 22%;
@@ -19,27 +20,16 @@ body{
     overflow-y: auto; /* Agrega una barra de desplazamiento vertical si el contenido excede la altura máxima */
 }
 
-/* Cambiar el tamaño de la barra de scroll vertical */
+/* Ocultar la barra de desplazamiento vertical */
+.container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer y Edge */
+}
+
 .container::-webkit-scrollbar {
-    width: 5px;
-    height: 8px; /* Ajusta la altura de la barra de scroll vertical */
+    display: none; /* Google Chrome y Safari */
 }
 
-/* Cambiar el estilo de la barra de scroll vertical */
-.container::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 4px;
-}
-
-/* Cambiar el estilo del botón del scroll vertical cuando se pasa el ratón sobre él */
-.container::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-}
-
-/* Cambiar el estilo del área de la barra de scroll vertical */
-.container::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-}
 form {
     background-size: contain; /* Ajusta el tamaño para que la imagen se ajuste completamente */
     background-repeat: no-repeat;
@@ -55,7 +45,7 @@ form {
 
 .logo{
     width: 125px;
-    left: 43%;
+    left: 46%;
     position: relative;
 }
 /* .fondo{
@@ -169,3 +159,7 @@ h5{
     cursor: pointer;
     font-size: 16px;
 }
+
+
+
+
